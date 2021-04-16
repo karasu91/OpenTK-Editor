@@ -1,0 +1,11 @@
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\bin\Debug\OpenTKEditor.exe.config
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\bin\Debug\OpenTKEditor.exe
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\bin\Debug\OpenTKEditor.pdb
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\bin\Debug\OpenTK.dll
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\bin\Debug\OpenTK.pdb
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\bin\Debug\OpenTK.xml
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\obj\Debug\OpenTKEditor.csprojAssemblyReference.cache
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\obj\Debug\OpenTKEditor.csproj.CoreCompileInputs.cache
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\obj\Debug\OpenTKEditor.csproj.CopyComplete
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\obj\Debug\OpenTKEditor.exe
+C:\Users\Lihis\Source\Repos\karasu91\OpenTK-Editor\OpenTKEditor\obj\Debug\OpenTKEditor.pdb

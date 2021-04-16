@@ -14,8 +14,8 @@ namespace OpenTKEditor
     class Window
     {
         #region Variables
-        private static readonly double fps = 60;
-        private static readonly double ups = 60;
+        private static readonly double fps = 144;
+        private static readonly double ups = 144;
         private static float _timeElapsed = 0.0f;
         private static float _timeInterval = 0.1f * (1 / (float)fps);
         Camera _Camera;
@@ -29,7 +29,7 @@ namespace OpenTKEditor
         private Matrix4 _transMatrix = Matrix4.Identity;
 
         private List<Object2D> _2dObjects = new List<Object2D>();
-        private List<Object3D> _3dObjects = new List<Object3D>();
+        private List<Object3D> _3DObjects = new List<Object3D>();
 
         float x_rot = 2;
         float y_rot = 2;
@@ -81,7 +81,7 @@ namespace OpenTKEditor
             window.Resize += OnResize;
             window.RenderFrame += OnRenderFrame;
             window.UpdateFrame += OnUpdateFrame;
-            //window.VSync = OpenTK.VSyncMode.Off;
+            window.VSync = OpenTK.VSyncMode.Off;
             #endregion
             window.Run(ups, fps);
         }
@@ -121,7 +121,7 @@ namespace OpenTKEditor
 
             float rot_mult_x = 0.005f;
             float rot_mult_y = 0.005f;
-            float rot_mult_z = 0.005f;
+            float rot_mult_z = 0.01f;
 
             float _recolor_mult = 0.0001f;
 
@@ -327,7 +327,7 @@ namespace OpenTKEditor
         private void OnRenderFrame(object o, FrameEventArgs e)
         {
             #region Console Output
-            Console.Clear();
+            Console.SetCursorPosition(0,0);
             Console.WriteLine(_Mouse._leftButtonPressed.ToString(), "asd");
             Console.WriteLine($"Y: {Globals.windowHeight.ToString()} X: {Globals.windowWidth.ToString()}");
             Console.WriteLine($"OrthoX: {Globals.ortho_x}, OrthoY: {Globals.ortho_y}, OrthoZ: { Globals.ortho_z}");
@@ -340,12 +340,15 @@ namespace OpenTKEditor
             Console.WriteLine($"Mouse lock: {_lockMouse}, Cursor visible: {window.CursorVisible}");
             Console.WriteLine($"trans: {_transMatrix}");
             #endregion
+
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             //Draw2dObjects(); // Bugs the 3d camera
             Draw3dObjects();
             GL.Flush();
             window.SwapBuffers();
-            frames_tot += 1;
+            frames_tot++;
+
+
         }
 
         private void Draw2dObjects()
@@ -368,9 +371,9 @@ namespace OpenTKEditor
             GL.CullFace(CullFaceMode.FrontAndBack);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.Enable(EnableCap.DepthTest);
-            GL.Translate(Globals.camera_x, Globals.camera_y, Globals.camera_z);
-            foreach (Object3D obj in _3dObjects)
-                obj.Draw();
+            GL.Translate(Globals.CameraX, Globals.CameraY, Globals.CameraZ);
+            for (int i = 0; i < _3DObjects.Count; i++)
+                _3DObjects[i].Draw();
             GL.PopMatrix();
         }
 
@@ -392,9 +395,9 @@ namespace OpenTKEditor
             _Colors._green = 0.0f;
             tri = new Triangle(0.001f);
             sq = new Square(0.0005f);
-            _2dObjects.Add(tri);
-            _2dObjects.Add(sq);
-            _3dObjects.Add(cube);
+            //_2dObjects.Add(tri);
+            //_2dObjects.Add(sq);
+            _3DObjects.Add(cube);
         }
     }
 }

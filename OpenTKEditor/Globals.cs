@@ -14,8 +14,8 @@ namespace OpenTKEditor
         public static int ortho_y = 50;
         public static int ortho_z = 50;
 
-        public static float camera_x = 0;
-        public static float camera_y = 0;
-        public static float camera_z = 0;
+        public static float CameraX = 0;
+        public static float CameraY = 0;
+        public static float CameraZ = 0;
     }
 }
